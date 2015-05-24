@@ -1,0 +1,437 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = "~/Views/Layouts/_Teacher.cshtml";
+}
+@section Css{
+    <style>
+       
+        .div_sj_header {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background: url('/resource/images/icon.png') no-repeat 0px -135px;
+            width: 200px;
+            height: 27px;
+            z-index: 2;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333333;
+            line-height: 30px;
+            text-indent: 2em;
+        }
+
+        .div_menu_by_left {
+            background: url('/resource/images/26.png') repeat-y;
+            width: 15px;
+            height: 100%;
+            position: absolute;
+            left: 200px;
+            top: 0px;
+        }
+         #div_sjxx {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            height: 115px;
+            color: #fff;
+            font-size: 12px;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+
+        #div_cp_menu {
+            width: 200px;
+            height: 180px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            background: #3a6ea7;
+            color: #fff;
+            cursor: pointer;
+        }
+        #div_pf_menu {
+            width: 200px;
+            height: 320px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            background: #3a6ea7;
+        }
+
+        .div_menu_left_bk {
+            background: #f0f0f0;
+            width: 15px;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 185px;
+        }
+
+        
+
+        #div_cp_menu_pf {
+            position: absolute;
+            top: 27px;
+            width: 200px;
+            height: 293px;
+            left: 0px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            background: #3a6ea7;
+        }
+
+        #div_TeachingPlan {
+            top: 40px;
+            left: 38px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #div_Courseware {
+            top: 65px;
+            left: 38px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #div_Reflection {
+            top: 115px;
+            left: 38px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #div_Video {
+            top: 90px;
+            left: 38px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        #div_score_sum {
+            position: absolute;
+            top: 155px;
+            left: 38px;
+            width: 180px;
+        }
+
+        #iframe_content {
+            position: absolute;
+            left: 220px;
+            top: 0px;
+        }
+
+        .div_sjx {
+            position: absolute;
+            top: 45px;
+            background: url('/resource/images/icon.png') no-repeat -225px -135px;
+            width: 10px;
+            height: 10px;
+            left: 25px;
+        }
+
+        .div_ok_html {
+            position: absolute;
+            top: 35px;
+            background: url('/resource/images/icon.png') no-repeat -220px -220px;
+            width: 25px;
+            height: 25px;
+            left: 140px;
+            display: none;
+        }
+
+        #div_cp_header {
+            width: 180px;
+            height: 60px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border: solid 1px #618bb9;
+            color: #fff;
+        }
+
+        #div_table_checkbox {
+           
+            width: 180px;
+            border-bottom: solid #618bb9 0px;
+            border-collapse: collapse;
+            color: #fff;
+            left: 5px;
+
+        }
+
+            #div_table_checkbox>tr {
+                height: 35px;
+            }
+
+        /*.div_cp_class {
+            text-align: center;
+            width: 160px;
+            width: 80px;
+            position: relative;
+            left: 10px;
+            height: 22px;
+            top: 3px;
+            background: #1d5891;
+            line-height: 22px;
+        }*/
+        #div_trs_xy {
+            /*background: red;*/
+            width: 180px;
+        }
+
+        #table_trs1 {
+            display: none;
+            border: none;
+        }
+
+            #table_trs1 tr {
+                height: 35px;
+                  border: none;
+            }
+
+        #table_trs2 tr {
+            height: 35px;
+              border: none;
+        }
+
+        .table_video_tr {
+            height: 30px;
+              border: none;
+        }
+
+        .div_tr_video_css {
+            position: relative;
+            width: 100%;
+            height: 35px;
+        }
+
+        #table_trs2_td {
+            width: 80px;
+            position: absolute;
+            top: 5px;
+            left: 80px;
+            color: #000;
+            background: url('/resource/images/btn_bg1.gif') repeat-x 0px -25px;
+            line-height: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #table_trs1_td {
+            width: 80px;
+            position: absolute;
+            top: 5px;
+            left: 0px;
+            color: #000;
+            background: url('/resource/images/btn_bg1.gif') repeat-x 0px -25px;
+            line-height: 25px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #table_trs2 {
+            display: none;
+        }
+
+        .div_cp_class {
+            text-align: center;
+            width: 80px;
+            position: relative;
+            left: 10px;
+            height: 22px;
+            top: 3px;
+            background: #1d5891;
+            line-height: 22px;
+        }
+
+        #div_table_checkbox> tr {
+            border-bottom: solid #618bb9 1px;
+            border-collapse: collapse;
+        }
+
+            #div_table_checkbox> tr> td {
+                border-bottom: solid #618bb9 1px;
+                border-collapse: collapse;
+            }
+
+        #btn_zb_Save {
+            background: url('/resource/images/btn_bg.gif') repeat-x 0px -20px;
+            width: 155px;
+            height: 20px;
+            border: solid 1px #918e8e;
+            position: relative;
+            top: 0px;
+            left: 13px;
+        }
+
+        .table_class_td_query {
+            width: 30px;
+            text-align: center;
+        }
+
+
+
+        .tab_teacher_score_header {
+            width: 200px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border: solid 1px #618bb9;
+            border-collapse: collapse;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .tab_teacher_score_header_bg {
+            background: url('/resource/images/icon.png') repeat-x 0px -297px;
+            width: 200px;
+            height: 20px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            color: #00427c;
+            font-weight: 100;
+        }
+
+
+        #div_teacher_score {
+            height: 90px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 200px;
+            z-index: 20;
+            display: none;
+            background: #3a6ea7;
+        }
+
+        .td_score {
+            width: 26.5px;
+            text-align: center;
+        }
+
+        .td_teacher_name {
+            width: 40px;
+            text-align: center;
+        }
+
+        #div_teacher_score_number {
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            width: 200px;
+            height: 70px;
+        }
+
+        #div_student_data {
+            display: block;
+            background: #3a6ea7;
+            height: 90px;
+        }
+        #table_pf_header {
+            width: 180px;
+            color: #fff;
+
+        }
+      .table_class_td_bj {
+           border-bottom: solid #618bb9 1px;
+                border-collapse: collapse;
+      }
+    </style>
+}
+@section Script{
+    @Scripts.Render("~/bundle/teacher/appraisal")
+}
+<div id="div_sjxx" data-OK="false" data-Height="115">
+
+    <div class="div_sj_header" id="div_header_sjxx"  data-Id="div_sjxx">阅卷信息</div>
+    <div id="div_sj_content">
+        <div id="div_student_data" style="position: absolute; top: 25px; width: 200px;">
+            <div id="div_student_Number">
+                <div style="position: absolute; left: 40px; top: 10px;">学号：<span id="span_student_number"></span></div>
+                <div style="position: absolute; left: 40px; top: 35px;">已阅：<span id="span_y_number">20</span></div>
+                <div style="position: absolute; left: 40px; top: 60px;">待阅：<span id="span_d_number">1</span></div>
+            </div>
+            <div id="div_teacher_score">
+                <table class="tab_teacher_score_header">
+                    <tr class="tab_teacher_score_header_bg">
+                        <th class="td_teacher_name">教师</th>
+                        <th class="td_score">教案</th>
+                        <th class="td_score">课件</th>
+                        <th class="td_score">说课</th>
+                        <th class="td_score">视频</th>
+                        <th class="td_score">反思</th>
+                        <th class="td_score">总分</th>
+                    </tr>
+                </table>
+                <div id="div_teacher_score_number">
+                </div>
+            </div>
+        </div>
+        <div class="div_menu_left_bk"></div>
+        <div class="div_menu_by_left"></div>
+    </div>
+</div>
+<div id="div_cp_menu" data-Ok="false" data-Height="180">
+    <div class="div_sj_header"  id="div_header_cp_menu" data-Id="div_cp_menu">测评菜单</div>
+    <div class="div_menu_left_bk"></div>
+    <div class="div_menu_by_left"></div>
+
+    <div class="div_sjx"></div>
+    <div class="div_sjx" style="top: 70px;"></div>
+    <div class="div_sjx" style="top: 95px;"></div>
+    <div class="div_sjx" style="top: 120px;"></div>
+
+    <div class="div_ok_html" id="div_TeachingPlan_OK"></div>
+    <div class="div_ok_html" id="div_Courseware_OK" style="top: 60px;"></div>
+    <div class="div_ok_html" id="div_Video_OK" style="top: 85px; left: 165px;"></div>
+    <div class="div_ok_html" id="div_Reflection_OK" style="top: 110px;"></div>
+
+
+    <div id="div_TeachingPlan">
+        教案 
+    </div>
+    <div id="div_Courseware">
+        课件 
+    </div>
+    <div id="div_Video">
+        微格视频 
+    </div>
+    <div id="div_Reflection">
+        反思 
+    </div>
+    <div style="position: absolute; width: 185px; height: 1px; background: #618bb9; left: 0px; top: 143px;"></div>
+    <div id="div_score_sum">总分 </div>
+</div>
+<div id="div_pf_menu">
+    <div class="div_sj_header" id="div_pfmianban">视频评分面板</div>
+
+    <div id="div_cp_menu_pf">
+        @* <div id="div_cp_header">
+            <div style="width: 20px; height: 50px; position: absolute; top: 10px; left: 10px;">测评项</div>
+            <div style="width: 20px; height: 50px; position: absolute; top: 10px; left: 45px;">不合格</div>
+            <div style="width: 20px; height: 50px; position: absolute; top: 10px; left: 75px;">合格</div>
+            <div style="width: 20px; height: 50px; position: absolute; top: 10px; left: 105px;">中</div>
+            <div style="width: 20px; height: 50px; position: absolute; top: 10px; left: 135px;">良</div>
+            <div style="width: 20px; height: 50px; position: absolute; top: 10px; left: 165px;">优</div>
+        </div>*@
+        <table id="table_pf_header">
+            <tr id="table_tr_pf_header">
+                <td style="width:40px;"><div style="width:20px; position:relative;left:5px;">测评项</div></td>
+                <td style="width:30px;"><div style="width:20px; position:relative;left:5px;">不合格</div></td>
+                <td style="width:30px;"><div style="width:20px; position:relative;left:5px;">合格</div></td>
+               <td style="width:30px;"><div style="width:20px; position:relative;left:6px;">中</div></td>
+                <td style="width:30px;"><div style="width:20px; position:relative;left:7px;">良</div></td>
+                 <td style="width:30px;"><div style="width:20px; position:relative;left:7px;">优</div></td>
+            </tr>
+        </table>
+        <table id="div_table_checkbox"></table>
+    </div>
+    <div class="div_menu_by_left"></div>
+</div>
+
+<iframe id="iframe_content" style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; width: 728px; height: 455px; border-right-width: 0px" src="" frameborder="0" width="100%" scrolling="no" height="100%"></iframe>
+<div style="position: absolute; height: 40px; width: 200px; border: solid red 0px; top: 615px;"></div>

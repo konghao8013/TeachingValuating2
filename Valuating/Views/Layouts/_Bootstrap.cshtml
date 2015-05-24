@@ -1,0 +1,14 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = "_Overstory.cshtml";
+}
+@section Script{
+    
+@* @Scripts.Render("~/bundle/commonality")*@
+    @RenderSection("Script",false)
+}
+@section Css{
+    <link href="~/Resource/Scripts/extjs/css/ext-theme-crisp/ext-theme-crisp-all.css" rel="stylesheet" />
+    @RenderSection("Css",false)
+}
+@RenderBody()

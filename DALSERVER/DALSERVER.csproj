@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FCD947B5-7AE5-4683-A8F6-7E4609B5AC1A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ALOS.DALSERVER</RootNamespace>
+    <AssemblyName>DALSERVER</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EvaluatingPaperServer.cs" />
+    <Compile Include="Help.cs" />
+    <Compile Include="IndexRemarkServer.cs" />
+    <Compile Include="IndexSortServer.cs" />
+    <Compile Include="ParperSendServer.cs" />
+    <Compile Include="PerformanceServer.cs" />
+    <Compile Include="PresentServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchoolServer.cs" />
+    <Compile Include="StudentRecordServer.cs" />
+    <Compile Include="StudentScoreServer.cs" />
+    <Compile Include="StudentServer.cs" />
+    <Compile Include="SysLogServer.cs" />
+    <Compile Include="SysMenuServer.cs" />
+    <Compile Include="SysScoreServer.cs" />
+    <Compile Include="SysSettingServer.cs" />
+    <Compile Include="SystemServer.cs" />
+    <Compile Include="TeacherServer.cs" />
+    <Compile Include="UserServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBHelp\DBHelp.csproj">
+      <Project>{1e904276-a4ac-4ea9-81bb-805581e44374}</Project>
+      <Name>DBHelp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EFJS\EFJS.csproj">
+      <Project>{3bd3c17e-71b0-4d62-b478-1960dcabd9b4}</Project>
+      <Name>EFJS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extend\Expand.csproj">
+      <Project>{245e05c5-295b-41bb-a646-a605bb3199ca}</Project>
+      <Name>Expand</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{cea95422-788b-4728-9030-57939cce2242}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>start EFJS.exe DAL ../../../valuating/Resource/Scripts/dbserver DALSERVER.dll Yes</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,31 @@
+﻿@using System.Web.Optimization
+@using Valuating.Controllers
+@using WebGrease.Configuration
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+  
+ 
+    <link href="~/Resource/Scripts/extjs/css/ext-theme-classic/ext-theme-classic-all.css" rel="stylesheet" />
+    @{
+       
+        @Scripts.Render("~/bundle/super")
+      
+           
+      
+    }
+
+
+
+</head>
+<body style="padding: 0px; margin: 0px;">
+    <div>
+        @RenderBody()
+    </div>
+    @RenderSection("Script", false)
+    @RenderSection("CSS", false)
+</body>
+</html>

@@ -1,0 +1,329 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = "~/Views/Layouts/_Student.cshtml";
+}
+@section Css{
+    <style>
+        #div_student_data {
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            font-size: 18px;
+        }
+
+        #span_number {
+            color: red;
+        }
+     
+        #div_student_bottom_wire {
+            background: #e5e5e5;
+            width: 1200px;
+            position: absolute;
+            top: 65px;
+            left: 0px;
+            height: 1px;
+        }
+         .download_a {
+            color: #ff6600;
+            margin-left: 10px;
+        }
+
+        .download_a:link {
+            color: #ff6600;
+        }
+
+        .download_a:visited {
+            color: #ff6600;
+        }
+
+        .download_a:hover {
+            color: #ff6600;
+        }
+
+        .download_a:active {
+            color: #ff6600;
+        }
+        #div_student_score {
+            width: 300px;
+            position: absolute;
+            left: 0px;
+            top: 75px;
+        }
+
+        #div_student_score_number {
+            color: #ff6600;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        #div_student_score_schedule {
+            width: 320px;
+            height: 30px;
+            position: absolute;
+            left: 0px;
+            top: 30px;
+            background: #efefef;
+        }
+
+        #div_score_schedule {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 0px;
+            height: 30px;
+            background: #ff6600;
+        }
+
+        #tab_student_score {
+            border: solid #c7c7c7 1px;
+            border-collapse: collapse;
+            position: absolute;
+            top: 75px;
+            left: 345px;
+            width: 855px;
+            height: 60px;
+        }
+
+            #tab_student_score tr td {
+                border: solid #c7c7c7 1px;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            #tab_student_score tr {
+                border: solid #c7c7c7 1px;
+                border-collapse: collapse;
+            }
+            .tab_score_header {
+                background: url('/resource/images/icon.png') repeat-x 0px -298px;
+                width: 855px;
+                height: 30px;
+                text-align: center;
+                color: #00427c;
+                font-size: 12px;
+                line-height: 30px;
+
+            }
+              #div_data_table {
+            color: #333333;
+            width: 1200px;
+            height: 175px;
+            position: absolute;
+            left: 0px;
+            top: 150px;
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+            text-align: center;
+               font-size: 12px;
+        }
+
+        #div_data_table tr {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+
+        #div_data_table tr td {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+        .tr_table_class {
+            background: url('/resource/images/icon.png') repeat-x 0px -296px;
+        }
+        #div_tabs_score_list {
+            position: absolute;
+            top: 340px;
+            width: 1200px;
+            left: 0px;
+            height: 0px;
+        }
+        .tab_score_tb {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+            width: 1200px;
+            margin-top: 10px;
+        }
+        .tab_score_tb tr {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+        .tab_score_tb tr th {
+           background: url('/resource/images/icon.png') repeat-x 0px -296px;
+            height: 30px;
+            text-align: left;
+            text-indent: 2em;
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 700;
+          
+          
+        }
+        .tab_score_tb tr td{
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+            height: 30px;
+        }
+        .div_xx1 {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 7px;
+            left: 50px;
+          background: url('/resource/images/icon.png') no-repeat -220px -248px;
+        }
+        .div_xx2 {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 7px;
+            left: 50px;
+          background: url('/resource/images/icon.png') no-repeat -240px -248px;
+        }
+        .table_th_string {
+            color: #ff6600;
+            font-size: 18px;
+            font-weight: 700;
+
+        }
+        .div_text_py {
+            height:124px;
+            font-size: 12px;
+            line-height: 20px;
+            text-indent: 2em;
+            position: relative;
+           
+            top: 5px;
+        }
+        #div_reset_btn {
+            position: absolute;
+            top: 0px;
+            width: 100px;
+            left: 550px;
+            background: url('/resource/images/btn_bg1.gif') repeat-x 0px 0px;
+            height: 25px;
+            color: #fff;
+            text-align: center;
+            line-height: 25px;
+            cursor: pointer;
+
+        }
+        #cp_exitdownload {
+            position: absolute;
+            left: 370px;
+            height: 20px;
+            background: url('/resource/images/btn_bg.gif') repeat-x 0px 0px;
+            width: 80px;
+            line-height: 20px;
+            font-size: 12px;
+            top: 0px;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+
+        }
+    </style>
+}
+@section Script{
+    @Scripts.Render("~/bundle/student/Score")
+}
+<div id="div_student_data">
+    <span id="span_userdata"></span>&nbsp;&nbsp;专家第<span id="span_number">0</span> 次测评
+    <div id="cp_exitdownload" onclick="DownLoadScore()" >档案下载</div>
+<br />
+</div>
+<div id="div_student_bottom_wire">
+</div>
+<div id="div_student_score">
+    <div id="div_student_score_number">测评结果75分中</div>
+    <div id="div_student_score_schedule">
+        <div id="div_score_schedule"></div>
+    </div>
+</div>
+<table id="tab_student_score">
+    <tr class="tab_score_header">
+        <td >教案与撰写能力</td>
+        <td>教育技术应用能力</td>
+        <td>教学评价能力I</td>
+        <td>教学实施能力</td>
+        <td>教学评价能力II</td>
+        <td>教学个性、特色与创新</td>
+        <td>总分</td>
+    </tr>
+    <tr>
+        <td><div id="div_tab_j"></div></td>
+        <td><div id="div_tab_k"></div></td>
+        <td><div id="div_tab_s"></div></td>
+        <td><div id="div_tab_v"></div></td>
+        <td><div id="div_tab_f"></div></td>
+        <td><div id="div_tab_c"></div></td>
+        <td><div id="div_tab_sum"></div></td>
+    </tr>
+</table>
+
+
+<table id="div_data_table">
+    <tr class="tr_table_class">
+        <td style="width: 90px; height: 32px; color: #00427c; text-align: center;">序号</td>
+        <td style="width: 220px; color: #00427c; text-align: center;">测试材料</td>
+        <td style="width: 300px; color: #00427c; text-align: center;">已上传文件</td>
+        <td style="width: 300px; color: #00427c; text-align: center;">文件信息</td>
+        <td style="color: #00427c; text-align: center;">下载</td>
+       
+    </tr>
+    <tr>
+        <td>教案</td>
+        <td>教学设计与教案撰写能力</td>
+        <td>
+            <div id="div_j_name"></div>
+        </td>
+        <td>
+            <div id="div_j_data"></div>
+        </td>
+        <td>
+            <div id="div_j_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>课件</td>
+        <td>教育技术应用能力</td>
+        <td>
+            <div id="div_k_name"></div>
+        </td>
+        <td>
+            <div id="div_k_data"></div>
+        </td>
+        <td>
+            <div id="div_k_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>微格视频</td>
+        <td>教学实施能力</td>
+        <td>
+            <div id="div_s_name"></div>
+        </td>
+        <td>
+            <div id="div_s_data"></div>
+        </td>
+        <td>
+            <div id="div_s_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>反思</td>
+        <td>教学评价能力</td>
+        <td>
+            <div id="div_f_name"></div>
+        </td>
+        <td>
+            <div id="div_f_data"></div>
+        </td>
+        <td>
+            <div id="div_f_download"></div>
+        </td>
+    </tr>
+</table>
+<div id="div_tabs_score_list">
+    
+</div>
+
+<div id="div_reset_btn">申请重测</div>

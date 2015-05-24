@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <script src="../Scripts/jquery-1.8.3.js"></script>
+    <script src="../Scripts/JqueryFn.js"></script>
+    <object id="webofficeword" height="400px" width="100%" style="LEFT: 0px; TOP:0px" classid="clsid:E77E049B-23FC-4DB8-B756-60529A35FAD5" codebase="weboffice_v6.0.5.0.cab#Version=6,0,5,0">
+        <param name="_ExtentX" value='6350'>
+        <param name='_ExtentY' value='6350'>
+    </object>
+
+
+    <script type="text/javascript">
+        var loadDocument = function (url) {//doc xls wps 
+            var webObj = document.getElementById("webofficeword");
+            var type = Params("format");
+
+          
+            webObj.LoadOriginalFile(url,type);
+        };
+        $(function () {
+            if (document.all.webofficeword.object == null) {
+                alert("Office插件未安装请下载");
+                location.href = "/resource/file/weboffice.rar";
+            }
+            $("#webofficeword").width($(document).width() - 4).height($(document).height() - 40);
+            var url = Params("path") + "." + Params("typeName");
+           
+            url = "http://" + location.host + url;
+            loadDocument(url);
+
+        });
+    </script>
+</body>
+</html>

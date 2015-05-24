@@ -1,0 +1,15 @@
+﻿@using System.Web.Optimization
+@using Valuating.Controllers
+@{
+    ViewBag.Title = VT.SystemName;
+    Layout = "~/views/layouts/_Super.cshtml";
+}
+<style>
+    .main_iframe {
+        
+    }
+</style>
+@section Script{
+  @*  <script src="~/Resource/Scripts/lodash.compat.js"></script>*@
+   @Scripts.Render("~/bundle/index")
+}

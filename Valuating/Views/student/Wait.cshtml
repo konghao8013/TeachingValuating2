@@ -1,0 +1,138 @@
+﻿@using System.Web.Optimization
+@using Valuating.Controllers
+@{
+    Layout = "~/Views/Layouts/_Student.cshtml";
+    ViewBag.Title = VT.SystemName;
+}
+@section Script{
+       @Scripts.Render("~/bundle/student/wait")
+}
+@section Css{
+   
+    <style>
+          #div_stuent_title {
+            font-size: 18px;
+            height: 94px;
+              position: absolute;
+              top: 25px;
+        }
+           #div_data_table {
+            color: #333333;
+            width: 1200px;
+            height: 175px;
+            position: absolute;
+            left: 0px;
+            top: 130px;
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+            text-align: center;
+               font-size: 12px;
+        }
+
+        #div_data_table tr {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+
+        #div_data_table tr td {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+        .tr_table_class {
+            background: url('/resource/images/icon.png') repeat-x 0px -296px;
+        }
+         #span_number {
+            color: red;
+        }
+        .download_a{
+              color: #ff6600;
+        }
+
+        .download_a:link {
+            color: #ff6600;
+             margin-left: 10px;
+        }
+
+        .download_a:visited {
+            color: #ff6600;
+        }
+
+        .download_a:hover {
+            color: #ff6600;
+        }
+
+        .download_a:active {
+            color: #ff6600;
+        }
+    </style>
+}
+
+<div id="div_stuent_title">
+    <br />
+    <span id="span_userdata"></span>&nbsp;&nbsp;专家第<span id="span_number">0</span> 次测评<br />
+    <br />
+    <div style="position:absolute; top:110px; width:1200px; border-bottom:solid #c7c7c7 1px;"></div>
+    你的测评申请已提交，请等待专家评测，此间你不能修改上传的资料
+    <table id="div_data_table">
+    <tr class="tr_table_class">
+        <td style="width: 90px; height: 32px; color: #00427c; text-align: center;">序号</td>
+        <td style="width: 220px; color: #00427c; text-align: center;">测试材料</td>
+        <td style="width: 300px; color: #00427c; text-align: center;">已上传文件</td>
+        <td style="width: 300px; color: #00427c; text-align: center;">文件信息</td>
+        <td style="color: #00427c; text-align: center;">下载</td>
+       
+    </tr>
+    <tr>
+        <td>教案</td>
+        <td>教学设计与教案撰写能力</td>
+        <td>
+            <div id="div_j_name"></div>
+        </td>
+        <td>
+            <div id="div_j_data"></div>
+        </td>
+        <td>
+            <div id="div_j_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>课件</td>
+        <td>教育技术应用能力</td>
+        <td>
+            <div id="div_k_name"></div>
+        </td>
+        <td>
+            <div id="div_k_data"></div>
+        </td>
+        <td>
+            <div id="div_k_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>微格视频</td>
+        <td>教学实施能力</td>
+        <td>
+            <div id="div_s_name"></div>
+        </td>
+        <td>
+            <div id="div_s_data"></div>
+        </td>
+        <td>
+            <div id="div_s_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>反思</td>
+        <td>教学评价能力</td>
+        <td>
+            <div id="div_f_name"></div>
+        </td>
+        <td>
+            <div id="div_f_data"></div>
+        </td>
+        <td>
+            <div id="div_f_download"></div>
+        </td>
+    </tr>
+</table>
+</div>

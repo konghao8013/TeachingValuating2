@@ -1,0 +1,252 @@
+﻿@using System.Web.Optimization
+@using Valuating.Controllers
+@{
+    ViewBag.Title = VT.SystemName;
+    Layout = "~/views/layouts/_Student.cshtml";
+}
+<div id="div_stuent_title">
+    <br />
+    <span id="span_userdata"></span>&nbsp;&nbsp;专家第<span id="span_number">0</span> 次测评<br />
+    <br />
+    请上传各项测评材料,在申请评测之前你还可以重新上传更新你的评测材料
+</div>
+<div id="div_sm">
+    <div style="position: absolute; top: 12px; left: 18px;">师范生课堂教学能力测评学生提交材料标准</div>
+    <div style="position: absolute; top: 36px; left: 18px;">一、教案</div>
+    <div style="position: absolute; top: 60px; left: 18px;">参评学生从所学专业对应的中小学学科课程中选择15分钟的授课内容撰写教案，不少于1500字，注明使用的教科书版本及其目次。</div>
+    <div style="position: absolute; top: 84px; left: 18px;">二、课件</div>
+    <div style="position: absolute; top: 106px; left: 18px;">参评学生根据教学内容自行设计制作教学课件，内容完整，画面清晰，播放流畅。</div>
+    <div style="position: absolute; top: 132px; left: 18px;">三、视频</div>
+    <div style="position: absolute; top: 158px; left: 18px;">根据教案及课件，5分钟课前说课视频，15分钟上课视频，共20分钟，一并录像并上传。</div>
+    <div style="position: absolute; top: 180px; left: 18px;">四、教学反思</div>
+    <div style="position: absolute; top: 200px; left: 18px;">参评学生根据教学实施情况自行撰写教学反思，字数不少于800字。</div>
+    <div style="position: absolute; top: 240px; left: 18px;">注意事项：参评学生提交的所有材料均不能以任何形式透露个人信息，否则所提交材料视为无效。</div>
+
+</div>
+
+<table id="div_upload_table">
+    <tr class="tr_table_class">
+        <td style="width: 300px; height: 32px; color: #00427c; text-indent: 2em;">请选择你要上传的测试项</td>
+        <td id="td_title_file_content" style="height: 32px; color: #00427c; text-indent: 2em;">文件上传区（支持Word上传）</td>
+    </tr>
+    <tr>
+        <td>
+
+            <select id="file_select" onchange="FileSelected()">
+                <option value="1">教案</option>
+                <option value="2">课件</option>
+                <option value="3">视频</option>
+                <option value="4">反思</option>
+
+            </select>
+
+
+        </td>
+        <td>
+            <input type="file" name="input_file" value="浏览" id="input_file" />
+            <input type="button" onclick="FileUpload(this)" value="上传" id="btn_upload" />
+        </td>
+    </tr>
+</table>
+
+
+<table id="div_data_table">
+    <tr class="tr_table_class">
+        <td style="width: 90px; height: 32px; color: #00427c; text-align: center;">序号</td>
+        <td style="width: 220px; color: #00427c; text-align: center;">测试材料</td>
+        <td style="width: 300px; color: #00427c; text-align: center;">已上传文件</td>
+        <td style="width: 300px; color: #00427c; text-align: center;">文件信息</td>
+        <td style="color: #00427c; text-align: center;">下载</td>
+       
+    </tr>
+    <tr>
+        <td>教案</td>
+        <td>教学设计与教案撰写能力</td>
+        <td>
+            <div id="div_j_name"></div>
+        </td>
+        <td>
+            <div id="div_j_data"></div>
+        </td>
+        <td>
+            <div id="div_j_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>课件</td>
+        <td>教育技术应用能力</td>
+        <td>
+            <div id="div_k_name"></div>
+        </td>
+        <td>
+            <div id="div_k_data"></div>
+        </td>
+        <td>
+            <div id="div_k_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>微格视频</td>
+        <td>教学实施能力</td>
+        <td>
+            <div id="div_s_name"></div>
+        </td>
+        <td>
+            <div id="div_s_data"></div>
+        </td>
+        <td>
+            <div id="div_s_download"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>反思</td>
+        <td>教学评价能力</td>
+        <td>
+            <div id="div_f_name"></div>
+        </td>
+        <td>
+            <div id="div_f_data"></div>
+        </td>
+        <td>
+            <div id="div_f_download"></div>
+        </td>
+    </tr>
+</table>
+<div style="position:absolute; top:700px; height:40px;">站位</div>
+<input type="button" value="申请测评" id="btn_apply" onclick="ApplyFunc()" />
+
+@section Css{
+    <style>
+        #span_number {
+            color: red;
+        }
+        #btn_apply {
+            position: absolute;
+            width: 80px;
+            height: 20px;
+            border: solid #a9a9a9 1px;
+            background: url('/resource/images/btn_bg.gif') repeat-x 0px 0px;
+            top: 620px;
+            left: 550px;
+            color: #fff;
+            cursor: pointer;
+            display: none;
+        }
+        #input_file {
+            width: 700px;
+            height: 22px;
+            border: solid 1px #a9a9a9;
+            position: absolute;
+            top: 40px;
+            left: 320px;
+        }
+
+        .download_a {
+            color: #ff6600;
+            margin-left: 10px;
+        }
+
+        .download_a:link {
+            color: #ff6600;
+        }
+
+        .download_a:visited {
+            color: #ff6600;
+        }
+
+        .download_a:hover {
+            color: #ff6600;
+        }
+
+        .download_a:active {
+            color: #ff6600;
+        }
+
+        #btn_upload {
+            background: url('/resource/images/btn_bg.gif') repeat-x 0px 0px;
+            height: 20px;
+            width: 75px;
+            border: solid #a9a9a9 1px;
+            position: absolute;
+            top: 40px;
+            left: 1040px;
+            line-height: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        #file_select {
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            width: 275px;
+            height: 22px;
+            border: solid 1px #a9a9a9;
+        }
+
+        #div_data_table {
+            color: #333333;
+            width: 1202px;
+            height: 175px;
+            position: absolute;
+            left: 0px;
+            top: 440px;
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        #div_data_table tr {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+
+        #div_data_table tr td {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+
+        #div_sm {
+            width: 1200px;
+            height: 260px;
+            position: absolute;
+            top: 95px;
+            left: 0px;
+            border: solid 1px #c7c7c7;
+            color: #333333;
+        }
+
+        #div_stuent_title {
+            font-size: 18px;
+            height: 94px;
+        }
+
+        #div_upload_table {
+            height: 70px;
+            width: 1202px;
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+            position: absolute;
+            top: 356px;
+        }
+
+        #div_upload_table tr {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+
+        #div_upload_table tr td {
+            border: solid 1px #c7c7c7;
+            border-collapse: collapse;
+        }
+
+        .tr_table_class {
+            background: url('/resource/images/icon.png') repeat-x 0px -296px;
+        }
+    </style>
+}
+
+@section Script{
+    @Scripts.Render("~/bundle/student/index")
+}

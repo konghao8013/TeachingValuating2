@@ -1,0 +1,195 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+   @using System.Web.Optimization
+@{
+
+}
+ @Scripts.Render("~/bundle/teacher")
+    @Scripts.Render("~/bundle/teacher/accomplish")
+    <link href="~/Resource/Scripts/extjs/css/ext-theme-crisp/ext-theme-crisp-all.css" rel="stylesheet" />
+
+    <style>
+        #div_a_content {
+            width: 1050px;
+            height: 500px;
+            position: relative;
+            margin: 0 auto;
+            top: 30px;
+            border: solid 1px #e3e3e3;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        #div_a_content tr {
+            border: solid 1px #e3e3e3;
+            border-collapse: collapse;
+        }
+
+        #div_a_content tr td {
+            border: solid 1px #e3e3e3;
+            border-collapse: collapse;
+        }
+
+        .lefttdbk {
+            background: #efefef;
+        }
+
+        .td_1_height {
+            height: 120px;
+        }
+
+        .td_2_height {
+            height: 100px;
+        }
+
+        .td_3_height {
+            height: 70px;
+        }
+        .td_4_height {
+            height: 55px;
+        }
+
+        .td_1_left_width {
+            width: 280px;
+        }
+        .left_div { 
+            position:relative;left:20px;
+            line-height: 27px;
+        }
+        .textarea_py {
+            width: 98%;
+            height: 100px;
+        }
+        #div_checkboxs {
+            position: absolute;
+            top: 38px;
+            left: 30px;
+        }
+        .classRed {
+            color: red;
+        }
+        .div_tc {
+            width:100%;height:70px; position:relative;
+        }
+        #cp_save {
+            background: url('/resource/images/btn_bg.gif') repeat-x 0px 0px;
+            width: 80px;
+            height: 20px;
+            position: absolute;
+            left: 330px;
+            top: 60px;
+            color: #fff;
+             line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #cp_exit {
+            background: url('/resource/images/btn_bg.gif') repeat-x 0px -20px;
+            width: 80px;
+            height: 20px;
+            position: absolute;
+            left: 460px;
+            top: 60px;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .div_radio_create {
+            position: absolute;
+            top: 0px;
+            width: 80px;
+            line-height: 20px;
+            height: 20px;
+        }
+        .div_radio_create input {
+            position: absolute;
+            top: 0px;
+        }
+    </style>
+
+<table id="div_a_content">
+    <tr>
+        <td class="lefttdbk td_1_height td_1_left_width">
+            <div class="left_div">使用说明</div>
+        </td>
+        <td>
+            <div class="left_div">
+                尊敬的老师：<br />
+                你已对学生的四个测评项给出了成绩，该成绩尚未提交服务器，目前，你可以选择以下操作：<br />
+                1.如果你想查询或调整学生的测评成绩，请点击左侧相应的测评项，即可重新评分；<br />
+                2.如果你想提交成绩到服务器，请点击下方的“测评完毕”按钮,成绩提交后将不能再修改。
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="lefttdbk td_2_height td_1_left_width">
+             <div class="left_div">评语</div>
+        </td>
+        <td>
+            <textarea class="textarea_py" id="text_py_teacher_auto"></textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="lefttdbk td_3_height td_1_left_width">
+             <div class="left_div">教学个性，特色创新</div>
+        </td>
+        <td>
+            <div class="div_tc">
+                <div style="position:absolute; left:30px;top:10px;">
+                    测评点：教学技术先进，教学方法创新，教学个性鲜明，有教学艺术感染力（任一方面均可）
+                </div>
+                <div id="div_checkboxs">
+                   
+                </div>
+            </div>
+           
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"  class="td_4_height">
+             <div class="left_div">请选择下面列出的结论</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="lefttdbk td_3_height td_1_left_width">
+            <div class="left_div">评测成绩</div>
+        </td>
+        <td>
+            <div class="div_tc" id="div_checkscore">
+                <div style="left:25px; position:absolute; top:30px;">
+                    <input checked="checked" name="score_input_radio" type="radio" value="1"  id="radio_yx"/>
+                    <label  for="radio_yx">提交成绩(有效)</label>
+                </div>
+                <div style="left:195px; position:absolute;top:30px;">
+                    <input name="score_input_radio" type="radio"  id="radio_wx" value="0"/>
+                    <label  for="radio_wx">课件与教案不一致<span class="classRed">(无效)</span></label>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td  colspan="2" style="height:100px;">
+             <div class="div_tc">
+                 <div id="cp_save" onclick="ScoreSave()" >测评完成</div>
+                 
+              </div>
+        </td>
+    </tr>
+    <tr>
+    </tr>
+
+</table>
+
+</body>
+</html>

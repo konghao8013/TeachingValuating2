@@ -1,0 +1,20 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = "~/Views/Layouts/_Super.cshtml";
+}
+
+
+@section Script{
+       @Scripts.Render("~/bundle/super/BackStudent")
+}
+@section CSS{
+    <style>
+        .bt_Button {
+            background: url('/resource/images/btn_bg1.gif') repeat-x 0px -0px;
+            height: 20px;
+            color: #fff;
+          
+        }
+    </style>
+}
+    

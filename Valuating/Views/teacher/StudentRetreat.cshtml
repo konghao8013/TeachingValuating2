@@ -1,0 +1,155 @@
+﻿@using System.Web.Optimization
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+     @Scripts.Render("~/bundle/teacher")
+    @Scripts.Render("~/bundle/teacher/StudentRetreat")
+    <style>
+         #div_a_content {
+            width: 1050px;
+            height: 500px;
+            position: relative;
+            margin: 0 auto;
+            top: 30px;
+            border: solid 1px #e3e3e3;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        #div_a_content tr {
+            border: solid 1px #e3e3e3;
+            border-collapse: collapse;
+        }
+
+        #div_a_content tr td {
+            border: solid 1px #e3e3e3;
+            border-collapse: collapse;
+        }
+
+        .lefttdbk {
+            background: #efefef;
+        }
+
+        .td_1_height {
+            height: 120px;
+        }
+
+        .td_2_height {
+            height: 100px;
+        }
+
+        .td_3_height {
+            height: 70px;
+        }
+        .td_4_height {
+            height: 55px;
+        }
+
+        .td_1_left_width {
+            width: 280px;
+        }
+        .left_div { 
+            position:relative;left:20px;
+            line-height: 27px;
+        }
+        .textarea_py {
+            width: 98%;
+            height: 100px;
+        }
+        #div_checkboxs {
+            position: absolute;
+            top: 38px;
+            left: 30px;
+        }
+        .classRed {
+            color: red;
+        }
+        .div_tc {
+            width:100%;height:70px; position:relative;
+        }
+        #cp_save {
+            background: url('/resource/images/btn_bg.gif') repeat-x 0px 0px;
+            width: 80px;
+            height: 20px;
+            position: absolute;
+            left: 330px;
+            top: 60px;
+            color: #fff;
+             line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #cp_exit {
+            background: url('/resource/images/btn_bg.gif') repeat-x 0px -20px;
+            width: 80px;
+            height: 20px;
+            position: absolute;
+            left: 460px;
+            top: 60px;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .div_radio_create {
+            position: absolute;
+            top: 0px;
+            width: 80px;
+            line-height: 20px;
+            height: 20px;
+        }
+        .div_radio_create input {
+            position: absolute;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+   <table id="div_a_content">
+    <tr>
+        <td class="lefttdbk td_1_height td_1_left_width">
+            <div class="left_div">使用说明</div>
+        </td>
+        <td>
+            <div class="left_div">
+                尊敬的老师：<br />
+                本页面的功能是实现将学生测评材料退回学生，不过需要专家输入退回原因，并且只有管理员审核后方各生效<br />
+            
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="lefttdbk td_2_height td_1_left_width">
+             <div class="left_div">退回原因</div>
+        </td>
+        <td>
+            <textarea class="textarea_py" id="text_py_teacher_auto"></textarea>
+        </td>
+    </tr>
+
+ 
+    <tr>
+        <td colspan="2"  class="td_4_height">
+             <div class="left_div"></div>
+        </td>
+    </tr>
+  
+    <tr>
+        <td  colspan="2" style="height:100px;">
+             <div class="div_tc">
+                 <div id="cp_save" onclick="SendData()" >提交退回申请</div>
+              </div>
+        </td>
+    </tr>
+    <tr>
+    </tr>
+
+</table>
+</body>
+</html>

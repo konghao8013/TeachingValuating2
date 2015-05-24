@@ -1,0 +1,190 @@
+﻿@using System.Web.Optimization
+@using Valuating.Controllers
+@model dynamic
+
+@{
+    ViewBag.Title = GlobalController.GetSystemName;
+    Layout = "../Layouts/_Bootstrap.cshtml";
+
+    ViewBag.BackgroundFile = false;
+}
+
+
+
+
+<div class="layer1">
+    <img src="/resource/images/login_bg.jpg" height="100%" width="100%"></div>
+<div class="layer2">
+    <div class="float"></div>
+    <div class="login">
+        <ul>
+            <li style="margin-top: 16px;">
+                <label>
+                    用户名:
+          <input id="name_html" class="input" name="用户名" maxlength="20" type="text">
+                </label>
+            </li>
+            <li>
+                <label>
+                    密&#12288;码:
+          <input class="input" id="pwd_html" name="密码" type="password" maxlength="20">
+                </label>
+            </li>
+            <li style="font-size: 12px; margin-left: 70px;">
+                <label for="">
+                    <input id="remember" type="checkbox" tabindex="4">
+                    记住账户</label>
+            </li>
+            <li>
+
+                <input id="Save_button" type="button" value="登 陆" />
+                <input id="btn" onclick="renamepwd()" style="margin-left: 15px;" name="" type="button" value="重 置" />
+            </li>
+        </ul>
+    </div>
+    <div class="list">
+        <ul>
+            <li style="margin-left: 80px!important; margin-left: 40px;"><a id="downloadrj" href="#">软件下载</a></li>
+            <li>|</li>
+            <li><a id="help_a" href="#">演示帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+
+@section Css{
+    <style>
+        body {
+            padding: 0;
+            margin: 0 auto;
+            font-family: 微软雅黑, verdana, Simsun, STXihei;
+            color: #333;
+            font: 12px/1.5;
+            font-size: 14px;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 0;
+            margin: 15px;
+            list-style: none;
+        }
+
+        .layer1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .layer2 {
+            width: 100%;
+            height: auto;
+            z-index: 1;
+            white-space: nowrap;
+            width: 950px;
+            height: 350px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -475px;
+            margin-top: -175px;
+            background: url(/resource/images/border_bg.png) no-repeat 0 0!important;
+            background: url(/resource/images/border_bg1.png) no-repeat 0 0;
+        }
+
+        .float {
+            float: left;
+            padding-top: 82px;
+            width: 640px;
+        }
+
+            .float img {
+                border-radius: 4px 0 0 4px;
+            }
+
+        .login {
+            width: 240px;
+            height: 160px;
+            padding-top: 120px;
+            float: left;
+        }
+
+        .input {
+            border: #959595 solid 1px;
+            width: 170px;
+            height: 24px;
+            line-height: 22px;
+            margin-left: 10px;
+            color: #333;
+        }
+
+        #Save_button {
+            margin-left: 60px;
+            width: 60px;
+            height: 26px;
+        }
+
+        #btn {
+            margin-left: 60px;
+            width: 60px;
+            height: 26px;
+        }
+
+        #remember {
+            vertical-align: middle;
+            height: 14px;
+            line-height: 14px;
+            width: 14px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .list {
+            width: 400px;
+            height: 30px;
+            margin-top: 282px;
+            *margin-top: 0;
+            _margin-top: -10px;
+        }
+
+            .list ul li {
+                text-indent: 12px;
+                float: left;
+                margin: 5px;
+                display: block;
+            }
+
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #ed0e0e;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+}
+@section Script{
+    @Scripts.Render("~/bundle/login")
+     @Scripts.Render("~/bundle/login/index")
+}
+
+

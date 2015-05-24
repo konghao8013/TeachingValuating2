@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+    <body>
+        <input type="radio" id="testRadio" /><script src="../Resource/Scripts/jquery-1.8.3.js"></script>
+        <input type="text" id="testText" />
+        <input type="button" value="选中" onclick="alertValue()" />
+        <script>
+            function alertValue() {
+                alert($("#testText[value='22']").length);
+            }
+        </script>
+    </body>
+
+</html>

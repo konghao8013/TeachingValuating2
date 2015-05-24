@@ -1,0 +1,101 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Scripts.Render("/scripts/login")
+    
+    @{
+     
+        if (false)
+        {
+        <script src="~/Resource/Scripts/jquery-1.8.3.js"></script>
+        }
+    }
+   
+    <script>
+       
+                  
+        var Width = 0;
+        var Height = 0;
+        $(function () {
+            LoadPage();
+            InitWindowSize();
+            var isSize = false;
+            $(window).resize(function () {
+
+                if (!isSize) {
+                    InitWindowSize();
+                    InitSize();
+                    BodySize();
+                    isSize = true;
+                } else {
+                    isSize = false;
+                }
+
+            });
+            BodySize();
+            InitSize();
+        });
+        //获取窗口大小赋值
+        InitWindowSize = function () {
+            Width = $(window).width();
+            Height = $(window).height();
+        };
+
+        var InitSize = function () {
+
+        };
+        var LoadPage = function () {
+
+        };
+        var BodySize = function () {
+
+
+
+            $("#DivBottom").css({
+                top: (Height - 30) + "px",
+                left: '0px',
+                height: '30px',
+                width: Width + "px"
+            });
+        };
+    </script>
+        <style>
+            #DivBottom {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+        </style>
+       
+</head>
+    <body style="padding:0px; margin:0px; background:url('@ViewBag.Background')">
+        @{
+            if (ViewBag.BackgroundFile!=null&&ViewBag.BackgroundFile)
+            {
+                <img style="position:absolute; top:0px; left:0px; z-index:-1;" id="imgBackground" src="@ViewBag.Background" />
+            }
+        }
+        
+        <div>
+            @RenderBody()
+        </div>
+        <div id="DivBottom">
+         @*   @RenderPage("~/Views/Fragment/_Bottom.cshtml")*@
+        </div>
+      
+        
+        
+        
+         @RenderSection("Script",false)
+        @RenderSection("Css",false)
+        
+     
+        
+
+    </body>
+
+</html>

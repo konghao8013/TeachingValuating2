@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/Layouts/_Overstory.cshtml";
+}
+<div id="video_html"></div>
+<style>
+    .test {
+        margin-left: 15px;
+    }
+</style>
+@section Script{
+    <script>
+        $(function() {
+          
+            var pid = "@Request.Params["pid"]";
+            var typeId = "@Request.Params["typeid"]";
+            $.Json("/teacher/showoffice", "GetUrl", {
+                pid: pid,
+                typeId: typeId
+            }, function(url) {
+                url = "http://" + location.host + url;
+                var html = '<OBJECT id="video"  LOOP="false"  TYPE="application/x-oleobject"  HEIGHT="480"';
+                html += 'STANDBY="media.wmp.standby"  WIDTH="640"  CLASSID="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6"  ID="MediaPlayer" ';
+                html += 'style="position:absolute; top:0px; left:0px;" >';
+                html += '<PARAM name="ShowStatusBar" value="-1">';
+                html += '<PARAM name="ControlType" value="2">';
+                html += '<PARAM name="HEIGHT" value="240">';
+                html += '<PARAM name="stretchToFit" value="true">';
+                html += '<PARAM name="URL" value="' + url + '">';
+                html += '<PARAM name="AutoSize" value="1"><PARAM name="Loop" value="false">';
+                html += '<PARAM name="WIDTH" value="320"><PARAM name="uiMode" value="full">';
+                html += '<PARAM name="TransparentAtStart" value="false">';
+                html += '<PARAM name="ShowDisplay" value="1">';
+                html += '<PARAM name="AutoStart" value="true">';
+                html += '<param name="EnableTracker" value="0">';
+                html += '<param name="ShowTracker" value="-1">';
+
+                html += '<EMBED  LOOP="false"  CONTROLLER="true"  AUTOPLAY="false"  HEIGHT="240"  SRC="' + url + '"   alt=""  WIDTH="320" > </EMBED></OBJECT>';
+                $("#video_html").html(html);
+                $("#video").width($(document).width() - 20).height($(document).height() - 40);
+                $(window).resize(function () {
+                    $("#video").width($(document).width() - 20).height($(document).height() - 40);
+                });
+            });
+        });
+    </script>
+}

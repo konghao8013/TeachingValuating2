@@ -1,0 +1,51 @@
+﻿@using System.Web.Optimization
+@using Valuating.Controllers
+@{
+    ViewBag.Title = VT.SystemName;
+    Layout = "~/Views/layouts/_Teacher.cshtml";
+}
+@section Script{
+     @Scripts.Render("~/bundle/teacher/index")
+}
+@section Css{   
+    <style>
+        #start_button {
+            background: url("/resource/images/btn_bg1.gif") repeat-x 0px 0px;
+            width: 160px;
+            height: 25px;
+            border: solid #939090 1px;
+            position: absolute;
+            top: 230px;
+            left: 670px;
+            color: #fff;
+            cursor: pointer;
+        }
+        #exit_button {
+            background: url("/resource/images/btn_bg1.gif") repeat-x 0px -25px;
+            width: 160px;
+            height: 25px;
+            border: solid #939090 1px;
+            position: absolute;
+            top: 230px;
+            left: 670px;
+            color: #fff;
+            cursor: pointer;
+            display: none;
+            /*left: 500px;*/
+            color: #000;
+            
+        }
+    </style>
+}
+<div style="position:relative; width:1200px; margin:0 auto;">
+    <div style="position: absolute; top: 150px; left: 320px; font-size: 20px;">
+        <span id="span_teacher_name">教师名称</span>老师 你好！
+    </div>
+    <div style="position: absolute; left: 320px; top: 190px; font-size: 18px;">共有<span style="color:red" id="span_number" >0</span> 位学生的测评材料等待你测评，点击按钮开始测评吧！</div>
+
+    <input   type="button" id="start_button"  value="开始测评" onclick="StartAppraisal()"/>
+    <input type="button" id="exit_button"  value="退出系统" onclick="ExitAppraisal()"/>
+   
+</div>
+
+

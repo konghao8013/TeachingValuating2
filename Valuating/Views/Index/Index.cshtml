@@ -1,0 +1,47 @@
+﻿@using System.Web.Optimization
+@model dynamic
+
+@{
+    Layout = "../Layouts/_Bootstrap.cshtml";
+    ViewBag.Background = "/resource/images/5-13050GZ015.gif";
+}
+
+<h2>title</h2>
+
+@section Script{
+    @{
+        if (false)
+        {
+            <script src="~/Resource/Scripts/JqueryFn.js"></script>
+            <script src="~/Resource/Scripts/model.js"></script>
+            <script src="~/Resource/Scripts/model/WebServerLog.js"></script>
+            <script src="~/Resource/Scripts/DB.js"></script>
+            <script src="~/Resource/Scripts/dbserver/UserServer.js"></script>
+            <script src="~/Resource/Scripts/dbserver/SysLogServer.js"></script>
+            <script src="~/Resource/Scripts/model/UserType.js"></script>
+        }
+       
+    }
+        <script>
+
+           
+            InitSize = function() {
+
+
+            };
+
+            LoadPage = function() {
+
+                var user = WM.UserType();
+                user.Id = 1;
+                DB.UserServer.SelectUser(user, function(data) {
+                    alert(data.ReturnValue.Name + "" + data.Time);
+
+                });
+
+
+            };
+
+
+        </script>
+    }
