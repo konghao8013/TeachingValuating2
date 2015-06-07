@@ -117,7 +117,7 @@ namespace Valuating
                     }
                     var dname = f.DirectoryName.Replace(tpath, "").Replace("\\", "/");
                     var jpath = "~/Resource/Scripts/viewScripts" + dname + "/" + f.Name;
-                    bundles.Add(new ScriptBundle((path + f.Name.Replace(".js", "")).ToLower()).Include(jpath));
+                    bundles.Add(new ScriptBundle((path + f.Name.Replace(".js", ""))).Include(jpath));
                 }
             }
             foreach (var d in directory.GetDirectories())

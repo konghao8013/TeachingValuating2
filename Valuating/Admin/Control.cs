@@ -36,6 +36,17 @@ namespace Valuating.Admin
 public static class ScriptOver {
    public static IHtmlString Render(params string[] paths){
        //BundleTable.Bundles
+       paths = Adjustment(paths);
        return Scripts.Render(paths);
     }
+   static string[] Adjustment(string[] paths) {
+       var list = new List<string>();
+       foreach (var path in paths) {
+           var bundle = BundleTable.Bundles.FirstOrDefault(a => a.Path.ToLower() == path.ToLower());
+           if (bundle != null) {
+               list.Add(bundle.Path);
+           }
+       }
+       return list.ToArray();
+   }
 }
