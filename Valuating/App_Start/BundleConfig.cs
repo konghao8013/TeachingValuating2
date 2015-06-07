@@ -16,7 +16,7 @@ namespace Valuating
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-           
+            var path = System.AppDomain.CurrentDomain.BaseDirectory;
             //bundles.Add(new ScriptBundle("~/scripts/dbserver/super").Include("~/Resource/Scripts/extjs/js/ext-all-debug.js", "~/Resource/Scripts/JqueryFn.js", "~/Resource/Scripts/model.js", "~/Resource/Scripts/model/WebServerLog.js", "~/Resource/Scripts/DB.js", "~/Resource/Scripts/dbserver/SysMenuServer.js", "~/Resource/Scripts/lodash.compat.js"));
 
             //var dbserver = new ScriptBundle("~/scripts/dbserver/super");
@@ -38,10 +38,18 @@ namespace Valuating
                 "~/Resource/Scripts/extjs/zh_CN/ext-locale-zh_CN.js",
                 "~/Resource/Scripts/JqueryFn.js",
                 "~/Resource/Scripts/model.js",
-                "~/Resource/Scripts/DB.js",
-                 "~/Resource/Scripts/ExtjsFn.js"
-              ).IncludeDirectory("~/Resource/Scripts/model", "*.js")
-              .IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
+                "~/Resource/Scripts/DB.js"
+              );//.IncludeDirectory("~/Resource/Scripts/model", "*.js")
+              //.IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
+            //dbserver.IncludeDirectory("~/Resource/Scripts/model", "*.js");
+          //  dbserver.IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
+
+            var dic = new DirectoryInfo(Path.Combine(path, "Scripts", "model"));
+            dic.GetFiles("*.js").Select(a => a.Name).ForEach(a => { 
+              //  dbserver
+            });
+
+            dbserver.Include("~/Resource/Scripts/ExtjsFn.js");
             bundles.Add(dbserver);
             var commonality = new ScriptBundle("~/bundle/commonality").Include(
                 "~/Resource/Scripts/jquery-1.8.3.js",
@@ -99,7 +107,7 @@ namespace Valuating
             bundles.Add(new StyleBundle("~/styles/css/ext", "~/Resource/Scripts/extjs/css/ext-theme-neptune-touch/ext-theme-neptune-touch-all.css"));
 
             bundles.Add(new ScriptBundle("~/scripts/login").Include("~/Resource/Scripts/jquery-1.8.3.js", "~/Resource/Scripts/JqueryFn.js"));
-            var path = System.AppDomain.CurrentDomain.BaseDirectory;
+           
         
             path = Path.GetFullPath(path + "Resource/Scripts/viewScripts");
             
@@ -123,7 +131,6 @@ namespace Valuating
                     var dname = f.DirectoryName.Replace(tpath, "").Replace("\\", "/");
                     var jpath = "~/Resource/Scripts/viewScripts" + dname + "/" + f.Name;
                  
-
                     bundles.Add(new ScriptBundle((path + f.Name.Replace(".js", ""))).Include(jpath));
                 }
             }

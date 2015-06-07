@@ -276,12 +276,12 @@ namespace Valuating.Controllers
             }
             try
             {
-                sw = new StreamWriter(errorurl + "\\" + DateTime.Now.ToString("yyyyMMdd") + ".txt", true);
+                sw = new StreamWriter(Path.GetFullPath(errorurl + "/" + DateTime.Now.ToString("yyyyMMdd") + ".txt"), true);
             }
             catch (Exception)
             {
 
-                sw = new StreamWriter(errorurl + "\\" + DateTime.Now.ToString("yyyyMMdd") + Guid.NewGuid().ToString("N") + ".txt", true);
+                sw = new StreamWriter(Path.GetFullPath(errorurl + "/" + DateTime.Now.ToString("yyyyMMdd") + Guid.NewGuid().ToString("N") + ".txt"), true);
             }
             sw.Write(value);
             sw.Close();
