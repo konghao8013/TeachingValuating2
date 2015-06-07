@@ -17,11 +17,14 @@ DB.EnumUserTypeJson = function () {
 
     ];
 };
+DB.EnumUserTeacherJson= function() {
+    return [{ Id: 1, Name: '学生账户' }, { Id: 2, Name: '教师账户' }, { Id: 3, Name: '管理员账户', }, { Id: 4, Name: '一评校内专家' }, { Id: 5, Name: '一评校外专家' }, { Id: 6, Name: '二评专家' }, { Id: 7, Name: '仲裁专家' }];
+}
 //获得教师类别枚举
 DB.EnumTeacherTypeJson = function () {
     return [
-        { Id: 1, Name: "一评一专家" },
-        { Id: 2, Name: "一评二专家" },
+        { Id: 1, Name: "一评校内专家" },
+        { Id: 2, Name: "一评校外专家" },
         { Id: 3, Name: "二评专家" },
         { Id: 4, Name: "仲裁专家" }
     ];
