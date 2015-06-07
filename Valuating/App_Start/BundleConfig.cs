@@ -101,7 +101,7 @@ namespace Valuating
             bundles.Add(new ScriptBundle("~/scripts/login").Include("~/Resource/Scripts/jquery-1.8.3.js", "~/Resource/Scripts/JqueryFn.js"));
             var path = System.AppDomain.CurrentDomain.BaseDirectory;
         
-            path = Path.GetFullPath(path + "Resource\\Scripts\\viewScripts");
+            path = Path.GetFullPath(path + "Resource/Scripts/viewScripts");
             
            
              var directory=new DirectoryInfo(path);

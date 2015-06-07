@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EFCode
 {
-    public class Field
+    public   class Field
     {
         /// <summary>
         /// 字段名称

@@ -9,7 +9,7 @@ namespace EFCode
     /// <summary>
     /// 
     /// </summary>
-    class Program
+     class  Program
     {
         private static string Url { set; get; }
         private static string Namespace { set; get; }
@@ -101,7 +101,7 @@ namespace EFCode
             sb.AppendLine("\t/// " + table.Content);
             sb.AppendLine("\t/// </summary>");
             sb.AppendLine("\t" + String.Format(TabName, table.Name, table.Content, key));
-            sb.AppendLine("\tpublic  class " + table.Name.GetTabValue());
+            sb.AppendLine("\tpublic partial class " + table.Name.GetTabValue());
             sb.AppendLine("\t{");
 
             var identitys = _help.IdentityList(table.Name);
