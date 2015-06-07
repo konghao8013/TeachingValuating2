@@ -10,6 +10,8 @@ fi
 
 echo Mode:$mode
 
-cp $basepath/Model/Bin/$mode/Model.dll $basepath/DALSERVER/Bin/DALSERVER.dll
+cp $basepath/Model/Bin/$mode/Model.dll $basepath/DALSERVER/Bin/$mode/Model.dll
+
+cp $basepath/Model/Bin/$mode/Model.dll $basepath/EFJS/Bin/$mode/Model.dll
 
 mono $basepath/EFJS/Bin/$mode/EFJS.exe DAL $basepath/Valuating/Resource/Scripts/dbserver $basepath/DALSERVER/Bin/$mode/DALSERVER.dll Yes
