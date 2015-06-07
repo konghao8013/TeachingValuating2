@@ -35,13 +35,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EvaluatingPaperServer.cs" />
@@ -66,19 +66,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBHelp\DBHelp.csproj">
-      <Project>{1e904276-a4ac-4ea9-81bb-805581e44374}</Project>
+      <Project>{1E904276-A4AC-4EA9-81BB-805581E44374}</Project>
       <Name>DBHelp</Name>
     </ProjectReference>
     <ProjectReference Include="..\EFJS\EFJS.csproj">
-      <Project>{3bd3c17e-71b0-4d62-b478-1960dcabd9b4}</Project>
+      <Project>{3BD3C17E-71B0-4D62-B478-1960DCABD9B4}</Project>
       <Name>EFJS</Name>
     </ProjectReference>
     <ProjectReference Include="..\Extend\Expand.csproj">
-      <Project>{245e05c5-295b-41bb-a646-a605bb3199ca}</Project>
+      <Project>{245E05C5-295B-41BB-A646-A605BB3199CA}</Project>
       <Name>Expand</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{cea95422-788b-4728-9030-57939cce2242}</Project>
+      <Project>{CEA95422-788B-4728-9030-57939CCE2242}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>

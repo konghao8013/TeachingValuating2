@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Extend\Expand.csproj">
-      <Project>{245e05c5-295b-41bb-a646-a605bb3199ca}</Project>
+      <Project>{245E05C5-295B-41BB-A646-A605BB3199CA}</Project>
       <Name>Expand</Name>
     </ProjectReference>
   </ItemGroup>
