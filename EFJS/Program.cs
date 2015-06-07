@@ -31,7 +31,7 @@ namespace EFJS
                 //../efjs/bin/Debug/EFJS.exe DAL ../valuating/Resource/Scripts/dbserver ../DALSERVER/bin/Debug/DALSERVER.dll Yes
                 
             }
-            args[1]=Path.GetFullPath(args[1])
+            args[1] = Path.GetFullPath(args[1]);
             switch (args[0])
             {
                 case "Model":
@@ -113,13 +113,14 @@ namespace EFJS
                 {
                     Directory.CreateDirectory(outUrl);
                 }
-               
-              
-                var outJs = outUrl + "/" + type.Name + ".js";
+
+
+                var outJs = Path.GetFullPath(outUrl + "/" + type.Name + ".js");
+
                 if (File.Exists(outJs))
                 {
-                    var outPath = Path.GetFullPath(outJs);
-                    var jsPath = Path.GetFullPath(outPath);
+
+                    var jsPath = Path.GetFullPath(outJs);
                     var sr = new StreamReader(jsPath, Encoding.UTF8);
                     var values = sr.ReadToEnd();
                     sr.Close();
@@ -196,7 +197,8 @@ namespace EFJS
                 {
                     Directory.CreateDirectory(outUrl);
                 }
-                var turl = outUrl + "\\" + type.Name + ".js";
+                var turl = Path.GetFullPath(outUrl + "\\" + type.Name + ".js");
+
                 var strs2 = sbs.ToString();
                 if (File.Exists(turl))
                 {
