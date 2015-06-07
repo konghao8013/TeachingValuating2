@@ -201,7 +201,7 @@ namespace EFJS
                 {
                     sbs.AppendLine(" obj.Model_Type=\""+type.FullName+"\";  return obj;};");
                 }
-                if (Directory.Exists(outUrl))
+                if (!Directory.Exists(outUrl))
                 {
                     Directory.CreateDirectory(outUrl);
                 }

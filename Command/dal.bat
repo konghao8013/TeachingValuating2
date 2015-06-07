@@ -1,4 +1,4 @@
-copy ..\Model\bin\debug\model.dll ..\DALSERVER\bin\model.dll
+copy ..\Model\bin\debug\model.dll ..\DALSERVER\bin\Debug\model.dll
 
 copy ..\Model\bin\debug\model.dll ..\EFJS\bin\Debug\model.dll
 
