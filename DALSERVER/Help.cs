@@ -38,7 +38,7 @@ namespace ALOS.DALSERVER
             sbsql.Append("declare ");
             foreach (SqlParameter p in log.OperateParameter)
             {
-                sbsql.Append("@" + p.ParameterName + " " + p.DbType + ",");
+                sbsql.Append("@" + p.ParameterName + " " + p.DbType + "  " + p.Direction + ",");
                 sb.Append("@" + p.ParameterName + "=" + p.Value + ",");
             }
             string text = "Method:" + log.Method + "\tSQL:" + log.OperateSql + "\tparameter:【" + sbsql.ToString() +
