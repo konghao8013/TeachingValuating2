@@ -253,7 +253,6 @@ namespace ALOS.DBHelp
                     if (map.Name.ToLower() == tabName.ConditionsChangeColumn.ToLower())
                     {
                         temp = new SqlParameter(map.Name, GetValue<T>(t, propertie));
-                       
                         list.Add(temp);
                         continue;
                     }

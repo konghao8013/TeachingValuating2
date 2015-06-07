@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ALOS.DALSERVER;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -17,7 +18,6 @@ namespace Valuating.Controllers
         
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-           
             if (VT.Users==null)
             {
                 actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);

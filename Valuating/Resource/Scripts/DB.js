@@ -12,12 +12,12 @@ DB.CreateWebLog = function (className, methodName, parameters,success) {
         if (success != null && data.Message=="OK") {
             success(data);
         } else if (data != null && data.Message != "OK") {
-            alert(data.Message);
+            alert(data.Message+"服务端错误");
         }
 
 
     }, function (error) {
-        alert("方法调用错误请检查");
+        alert(error.responseText+ "方法调用错误请检查");
     });
 };
 DB.VT = function () {

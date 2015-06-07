@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ALOS.Expand;
 using ALOS.Model;
+using ALOS.DALSERVER;
 
 namespace Valuating.Controllers
 {
@@ -125,15 +126,20 @@ namespace Valuating.Controllers
         {
             get
             {
+              
+                if (HttpContext.Current == null) {
+                    return null;
+                }
 
-                if (HttpContext.Current.Session[VT.UserGuid] != null)
+                if (HttpContext.Current.Session!=null&&HttpContext.Current.Session[VT.UserGuid] != null)
                 {
                     return (UserType)HttpContext.Current.Session[VT.UserGuid];
                 }
+                SysLogServer.InsertMessage("row:138" + "| HttpContext.Current.Request.Cookies" + (HttpContext.Current.Request.Cookies == null), "UserType", "Debug");
                 if (HttpContext.Current.Request.Cookies[UserGuid] != null)
                 {
                    var user= DB.UserServer.UserGuidLogin(HttpContext.Current.Request.Cookies[UserGuid].Value);
-                   HttpContext.Current.Session[VT.UserGuid] = user;
+                   //HttpContext.Current.Session[VT.UserGuid] = user;
                     return user;
                 }
                 return null;
