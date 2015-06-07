@@ -10,4 +10,4 @@ fi
 
 echo Mode:$mode
 
-mono $basepath/EFJS/Bin/$mode/EFJS.exe Model $basepath/Valuating/Resource/Scripts/model $basepath/Model/Bin/$mode/Model.dll Yes
+mono $basepath/EFJS/bin/$mode/EFJS.exe Model $basepath/Valuating/Resource/Scripts/model $basepath/Model/bin/$mode/Model.dll Yes
