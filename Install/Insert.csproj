@@ -52,19 +52,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Microsoft.Web.Administration.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.Web.Administration">
+      <HintPath>..\packages\Microsoft.Web.Administration.7.0.0.0\lib\net20\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Delegation">
+      <HintPath>..\packages\Microsoft.Web.Deployment.3.6.0-beta\lib\Net40\Microsoft.Web.Delegation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Deployment">
+      <HintPath>..\packages\Microsoft.Web.Deployment.3.6.0-beta\lib\Net40\Microsoft.Web.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Deployment.Tracing">
+      <HintPath>..\packages\Microsoft.Web.Deployment.3.6.0-beta\lib\Net40\Microsoft.Web.Deployment.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.0.4\lib\net20\EPPlus.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigHelp.cs" />
@@ -111,10 +121,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBHelp\DBHelp.csproj">
-      <Project>{1e904276-a4ac-4ea9-81bb-805581e44374}</Project>
+      <Project>{1E904276-A4AC-4EA9-81BB-805581E44374}</Project>
       <Name>DBHelp</Name>
     </ProjectReference>
   </ItemGroup>
