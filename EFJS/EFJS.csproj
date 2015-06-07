@@ -49,6 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DBHelp\DBHelp.csproj">
+      <Project>{1e904276-a4ac-4ea9-81bb-805581e44374}</Project>
+      <Name>DBHelp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Extend\Expand.csproj">
       <Project>{245e05c5-295b-41bb-a646-a605bb3199ca}</Project>
       <Name>Expand</Name>
