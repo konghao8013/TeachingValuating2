@@ -2,4 +2,12 @@
 
 basepath=$(cd `dirname $0`; cd .. ; pwd)
 
-mono $basepath/efjs/bin/Debug/EFJS.exe Model $basepath/valuating/Resource/Scripts/model $basepath/Model/bin/Debug/Model.dll Yes
+mode=Debug
+
+if [ -n "$1" ];then
+	mode=$1
+fi
+
+echo Mode:$mode
+
+mono $basepath/EFJS/Bin/$mode/EFJS.exe Model $basepath/Valuating/Resource/Scripts/model $basepath/Model/Bin/$mode/Model.dll Yes

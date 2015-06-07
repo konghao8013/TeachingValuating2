@@ -2,5 +2,14 @@
 
 basepath=$(cd `dirname $0`; cd .. ; pwd)
 
+mode=Debug
 
-mono $basepath/efjs/bin/Debug/EFJS.exe DAL $basepath/valuating/Resource/Scripts/dbserver $basepath/DALSERVER/bin/Debug/DALSERVER.dll Yes
+if [ -n "$1" ];then
+	mode=$1
+fi
+
+echo Mode:$mode
+
+cp $basepath/Model/Bin/$mode/Model.dll $basepath/DALSERVER/Bin/DALSERVER.dll
+
+mono $basepath/EFJS/Bin/$mode/EFJS.exe DAL $basepath/Valuating/Resource/Scripts/dbserver $basepath/DALSERVER/Bin/$mode/DALSERVER.dll Yes
