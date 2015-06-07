@@ -17,10 +17,19 @@ namespace EFJS
         /// <param name="args">启动参数 下标0 为输出类型，下标1为输出JS的路径 下标2为Dll路径下标3代表是否可调试</param>
         static void Main(string[] args)
         {
+            //start EFJS.exe DAL ../../../valuating/Resource/Scripts/dbserver ../../../DALSERVER/bin/Debug/DALSERVER.dll Yes
+            var list = new List<string>();
+            list.Add("DAL");
+            list.Add("../../../valuating/Resource/Scripts/dbserver");
+            list.Add("../../../DALSERVER/bin/Debug/DALSERVER.dll");
+            list.Add("Yes");
+         //   args = list.ToArray();
             if (args == null || args.Length < 4)
             {
                 Console.WriteLine("启动参数不正确：启动参数 下标0 为输出类型，下标1为输出JS的路径 下标2为Dll路径 3是否为压缩模式Yse No \r\n  start EFJS.exe Model ../../../valuating/Resource/Scripts/model Model.dll Yes");
-                return;
+              //  return;
+                //../efjs/bin/Debug/EFJS.exe DAL ../valuating/Resource/Scripts/dbserver ../DALSERVER/bin/Debug/DALSERVER.dll Yes
+                
             }
             switch (args[0])
             {
