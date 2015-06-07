@@ -196,3 +196,5 @@ FakesAssemblies/
 *.opt
 
 .DS_Store
+
+Valuating/Resource/Scripts/model/*
