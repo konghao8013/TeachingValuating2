@@ -18,12 +18,20 @@ namespace EFJS
         static void Main(string[] args)
         {
             //start EFJS.exe DAL ../../../valuating/Resource/Scripts/dbserver ../../../DALSERVER/bin/Debug/DALSERVER.dll Yes
+            //var list = new List<string>();
+            //list.Add("DAL");
+            //list.Add("../../../valuating/Resource/Scripts/dbserver");
+            //list.Add("../../../DALSERVER/bin/Debug/DALSERVER.dll");
+            //list.Add("Yes");
+            //args = list.ToArray();
+
             var list = new List<string>();
-            list.Add("DAL");
-            list.Add("../../../valuating/Resource/Scripts/dbserver");
-            list.Add("../../../DALSERVER/bin/Debug/DALSERVER.dll");
+            list.Add("Model");
+            list.Add("../../../valuating/Resource/Scripts/model");
+            list.Add("../../../model/bin/Debug/model.dll");
             list.Add("Yes");
-         //   args = list.ToArray();
+            args = list.ToArray();
+
             if (args == null || args.Length < 4)
             {
                 Console.WriteLine("启动参数不正确：启动参数 下标0 为输出类型，下标1为输出JS的路径 下标2为Dll路径 3是否为压缩模式Yse No \r\n  start EFJS.exe Model ../../../valuating/Resource/Scripts/model Model.dll Yes");
@@ -197,7 +205,8 @@ namespace EFJS
                 {
                     Directory.CreateDirectory(outUrl);
                 }
-                var turl = Path.GetFullPath(outUrl + "\\" + type.Name + ".js");
+
+                var turl = Path.GetFullPath(outUrl + Path.PathSeparator + type.Name + ".js");
 
                 var strs2 = sbs.ToString();
                 if (File.Exists(turl))
