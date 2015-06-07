@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ALOS.DALSERVER;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -99,7 +100,10 @@ namespace Valuating
 
             bundles.Add(new ScriptBundle("~/scripts/login").Include("~/Resource/Scripts/jquery-1.8.3.js", "~/Resource/Scripts/JqueryFn.js"));
             var path = System.AppDomain.CurrentDomain.BaseDirectory;
-            path = path + "Resource\\Scripts\\viewScripts";
+        
+            path = Path.GetFullPath(path + "Resource\\Scripts\\viewScripts");
+            
+           
              var directory=new DirectoryInfo(path);
 
             AddBundles(bundles, directory,"~/bundle/",path);
@@ -115,8 +119,11 @@ namespace Valuating
                     {
 
                     }
+                  
                     var dname = f.DirectoryName.Replace(tpath, "").Replace("\\", "/");
                     var jpath = "~/Resource/Scripts/viewScripts" + dname + "/" + f.Name;
+                 
+
                     bundles.Add(new ScriptBundle((path + f.Name.Replace(".js", ""))).Include(jpath));
                 }
             }

@@ -235,6 +235,9 @@ public static class StringExpand
     /// <returns></returns>
     public static string SHA512_Encrypt(this string plainText)
     {
+        if (plainText == null) {
+            plainText = "";
+        }
         SHA512 sha512 = new SHA512Managed();
         byte[] tmpByte = Encoding.UTF8.GetBytes(plainText);
         tmpByte = sha512.ComputeHash(tmpByte);
