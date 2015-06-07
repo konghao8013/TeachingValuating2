@@ -31,9 +31,11 @@ namespace EFJS
                 //../efjs/bin/Debug/EFJS.exe DAL ../valuating/Resource/Scripts/dbserver ../DALSERVER/bin/Debug/DALSERVER.dll Yes
                 
             }
+            args[1]=Path.GetFullPath(args[1])
             switch (args[0])
             {
                 case "Model":
+                  
                    GetModelText(args[1],args[2],args[3]);
                    // var sr = new StreamReader(args[1]);
                    // var tstr = sr.ReadToEnd();
@@ -116,7 +118,9 @@ namespace EFJS
                 var outJs = outUrl + "/" + type.Name + ".js";
                 if (File.Exists(outJs))
                 {
-                    var sr = new StreamReader(outJs, Encoding.UTF8);
+                    var outPath = Path.GetFullPath(outJs);
+                    var jsPath = Path.GetFullPath(outPath);
+                    var sr = new StreamReader(jsPath, Encoding.UTF8);
                     var values = sr.ReadToEnd();
                     sr.Close();
                     if (values==sb.ToString())

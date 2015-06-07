@@ -4,6 +4,8 @@ DB.EnumUserTypeStore = function () {
         fields: ['typeId', 'name'],
         data: EnumUserTypeJson()
 
+
+
     });
     return states;
 };
