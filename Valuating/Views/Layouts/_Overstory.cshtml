@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Scripts.Render("/scripts/login")
-    
+    @RenderSection("Script", false)
+    @RenderSection("Css", false)
     @{
      
         if (false)
@@ -45,12 +46,6 @@
             Height = $(window).height();
         };
 
-        var InitSize = function () {
-
-        };
-        var LoadPage = function () {
-
-        };
         var BodySize = function () {
 
 
@@ -88,10 +83,7 @@
         </div>
       
         
-        
-        
-         @RenderSection("Script",false)
-        @RenderSection("Css",false)
+    
         
      
         

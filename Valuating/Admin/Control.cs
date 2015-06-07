@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Optimization;
 using System.Web.UI;
 using Valuating.Controllers;
 
 namespace Valuating.Admin
 {
+   
     public class Control:Page
     {
        
@@ -28,5 +30,12 @@ namespace Valuating.Admin
         {
             
         }
+    }
+}
+
+public static class ScriptOver {
+   public static IHtmlString Render(params string[] paths){
+       //BundleTable.Bundles
+       return Scripts.Render(paths);
     }
 }
