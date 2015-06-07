@@ -25,12 +25,12 @@ namespace EFJS
             //list.Add("Yes");
             //args = list.ToArray();
 
-            var list = new List<string>();
-            list.Add("Model");
-            list.Add("../../../valuating/Resource/Scripts/model");
-            list.Add("../../../model/bin/Debug/model.dll");
-            list.Add("Yes");
-            args = list.ToArray();
+            //var list = new List<string>();
+            //list.Add("Model");
+            //list.Add("../../../valuating/Resource/Scripts/model");
+            //list.Add("../../../model/bin/Debug/model.dll");
+            //list.Add("Yes");
+            //args = list.ToArray();
 
             if (args == null || args.Length < 4)
             {
