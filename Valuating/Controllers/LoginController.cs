@@ -15,7 +15,7 @@ namespace Valuating.Controllers
         public ActionResult Index()
         {
 
-            return View("~/views/login/index.cshtml");
+            return View("~/Views/Login/Index.cshtml");
         }
         [AcceptVerbs("POST","GET")]
         public string Reader()

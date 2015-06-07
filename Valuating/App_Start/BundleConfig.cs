@@ -17,17 +17,7 @@ namespace Valuating
         public static void RegisterBundles(BundleCollection bundles)
         {
             var path = System.AppDomain.CurrentDomain.BaseDirectory;
-            //bundles.Add(new ScriptBundle("~/scripts/dbserver/super").Include("~/Resource/Scripts/extjs/js/ext-all-debug.js", "~/Resource/Scripts/JqueryFn.js", "~/Resource/Scripts/model.js", "~/Resource/Scripts/model/WebServerLog.js", "~/Resource/Scripts/DB.js", "~/Resource/Scripts/dbserver/SysMenuServer.js", "~/Resource/Scripts/lodash.compat.js"));
-
-            //var dbserver = new ScriptBundle("~/scripts/dbserver/super");
-            //dbserver.Include("~/Resource/Scripts/lodash.compat.js");
-            //dbserver.Include("~/Resource/Scripts/extjs/js/ext-all-debug.js");
-            //dbserver.Include("~/Resource/Scripts/JqueryFn.js");
-            //dbserver.Include("~/Resource/Scripts/model.js");
-            //dbserver.Include("~/Resource/Scripts/DB.js");
-            //dbserver.Include("~/Resource/Scripts/model/WebServerLog.js");
-            //dbserver.Include("~/Resource/Scripts/dbserver/SysMenuServer.js");
-//E:\yaleshi\yaleshi\code\TeachingValuating\Valuating\Resource\Scripts\extjs\css\css\ext-theme-classic\build\ext-theme-classic.js
+          
             var dbserver = new ScriptBundle("~/bundle/super").Include(
                 "~/Resource/Scripts/jquery-1.8.3.js",
                 "~/Resource/Scripts/lodash.compat.js",
@@ -39,18 +29,12 @@ namespace Valuating
                 "~/Resource/Scripts/JqueryFn.js",
                 "~/Resource/Scripts/model.js",
                 "~/Resource/Scripts/DB.js"
-              );//.IncludeDirectory("~/Resource/Scripts/model", "*.js")
-              //.IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
-            //dbserver.IncludeDirectory("~/Resource/Scripts/model", "*.js");
-          //  dbserver.IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
-
-            var dic = new DirectoryInfo(Path.Combine(path, "Scripts", "model"));
-            dic.GetFiles("*.js").Select(a => a.Name).ForEach(a => { 
-              //  dbserver
-            });
-
+              );
             dbserver.Include("~/Resource/Scripts/ExtjsFn.js");
-            bundles.Add(dbserver);
+           
+            AddServerModel(path, dbserver);
+
+
             var commonality = new ScriptBundle("~/bundle/commonality").Include(
                 "~/Resource/Scripts/jquery-1.8.3.js",
                 "~/Resource/Scripts/lodash.compat.js",
@@ -64,9 +48,10 @@ namespace Valuating
                 "~/Resource/Scripts/DB.js",
                 "~/Resource/Scripts/_student.js",
                    "~/Resource/Scripts/ExtjsFn.js"
-               
-              ).IncludeDirectory("~/Resource/Scripts/model", "*.js")
-              .IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
+
+              );
+            AddServerModel(path, commonality);
+
             var teacher = new ScriptBundle("~/bundle/teacher").Include(
                "~/Resource/Scripts/jquery-1.8.3.js",
                "~/Resource/Scripts/lodash.compat.js",
@@ -80,9 +65,8 @@ namespace Valuating
                "~/Resource/Scripts/DB.js",
                "~/Resource/Scripts/_teacher.js"
 
-             ).IncludeDirectory("~/Resource/Scripts/model", "*.js")
-             .IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
-
+             );
+            AddServerModel(path, teacher);
             var login = new ScriptBundle("~/bundle/login").Include(
                "~/Resource/Scripts/jquery-1.8.3.js",
                "~/Resource/Scripts/lodash.compat.js",
@@ -95,8 +79,11 @@ namespace Valuating
                "~/Resource/Scripts/model.js",
                "~/Resource/Scripts/DB.js"
 
-             ).IncludeDirectory("~/Resource/Scripts/model", "*.js")
-             .IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
+             );
+
+            AddServerModel(path, login);
+
+
             bundles.Add(dbserver);
             bundles.Add(commonality);
             bundles.Add(teacher);
@@ -115,6 +102,24 @@ namespace Valuating
              var directory=new DirectoryInfo(path);
 
             AddBundles(bundles, directory,"~/bundle/",path);
+        }
+
+        private static void AddServerModel(string path, Bundle dbserver)
+        {
+            //var dicModel = new DirectoryInfo(Path.Combine(path, "Resource", "Scripts", "model"));
+            //dicModel.GetFiles("*.js").Select(a => a.Name).ForEach(a =>
+            //{
+            //    dbserver.Include(Path.Combine("~/Resource/Scripts/model", a));
+            //});
+            //var dicDbserver = new DirectoryInfo(Path.Combine(path, "Resource", "Scripts", "dbserver"));
+            //dicDbserver.GetFiles("*.js").Select(a => a.Name).ForEach(a =>
+            //{
+            //    dbserver.Include(Path.Combine("~/Resource/Scripts/model", a));
+            //});
+            dbserver.IncludeDirectory("~/Resource/Scripts/model","*.js");
+            dbserver.IncludeDirectory("~/Resource/Scripts/dbserver", "*.js");
+            dbserver.Include(Path.Combine("~/Resource/Scripts/js/DBSource.js"));
+            dbserver.Include(Path.Combine("~/Resource/Scripts/js/WebServerLog.js"));
         }
 
         public static void AddBundles(BundleCollection bundles, DirectoryInfo directory,string path,string tpath)

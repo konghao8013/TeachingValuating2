@@ -4177,6 +4177,8 @@
     <Content Include="Resource\Scripts\json2\json2.js" />
     <Content Include="Resource\Scripts\json2\json_parse.js" />
     <Content Include="Resource\Scripts\json2\json_parse_state.js" />
+    <Content Include="Resource\Scripts\js\DBSource.js" />
+    <Content Include="Resource\Scripts\js\WebServerLog.js" />
     <Content Include="Resource\Scripts\linq.js" />
     <Content Include="Resource\Scripts\lodash.compat.js" />
     <Content Include="Resource\Scripts\model.js" />
