@@ -198,3 +198,4 @@ FakesAssemblies/
 .DS_Store
 
 Valuating/Resource/Scripts/model/*
+Valuating/Resource/Scripts/dbserver/*
