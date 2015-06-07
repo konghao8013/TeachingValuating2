@@ -69,11 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EFJS\EFJS.csproj">
-      <Project>{3bd3c17e-71b0-4d62-b478-1960dcabd9b4}</Project>
+      <Project>{3BD3C17E-71B0-4D62-B478-1960DCABD9B4}</Project>
       <Name>EFJS</Name>
     </ProjectReference>
     <ProjectReference Include="..\Extend\Expand.csproj">
-      <Project>{245e05c5-295b-41bb-a646-a605bb3199ca}</Project>
+      <Project>{245E05C5-295B-41BB-A646-A605BB3199CA}</Project>
       <Name>Expand</Name>
     </ProjectReference>
   </ItemGroup>

@@ -50,11 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DBHelp\DBHelp.csproj">
-      <Project>{1e904276-a4ac-4ea9-81bb-805581e44374}</Project>
+      <Project>{1E904276-A4AC-4EA9-81BB-805581E44374}</Project>
       <Name>DBHelp</Name>
     </ProjectReference>
     <ProjectReference Include="..\Extend\Expand.csproj">
-      <Project>{245e05c5-295b-41bb-a646-a605bb3199ca}</Project>
+      <Project>{245E05C5-295B-41BB-A646-A605BB3199CA}</Project>
       <Name>Expand</Name>
     </ProjectReference>
   </ItemGroup>
